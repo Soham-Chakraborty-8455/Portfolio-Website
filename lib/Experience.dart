@@ -3,8 +3,8 @@ import 'package:portfolio_web/main.dart';
 
 
 //stateless part(const)
-class MyProjects extends StatelessWidget {
-  const MyProjects({Key? key}) : super(key: key);
+class MyExperience extends StatelessWidget {
+  const MyExperience({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -205,7 +205,7 @@ class MyProjects extends StatelessWidget {
                         children: <Widget>[
                           Homepage(),
                           SizedBox(height: 10.00),
-                          Projects(),
+                          Experience(),
                         ],
                       ),
                       decoration: BoxDecoration(
@@ -232,14 +232,14 @@ class MyProjects extends StatelessWidget {
 
 
 //stateful part
-class Projects extends StatefulWidget {
-  const Projects({Key? key}) : super(key: key);
+class Experience extends StatefulWidget {
+  const Experience({Key? key}) : super(key: key);
 
   @override
-  State<Projects> createState() => _ProjectsState();
+  State<Experience> createState() => _ExperienceState();
 }
 
-class _ProjectsState extends State<Projects> {
+class _ExperienceState extends State<Experience> {
   @override
   Widget build(BuildContext context) {
     return Container();

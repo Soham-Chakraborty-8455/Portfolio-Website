@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_web/Experience.dart';
 import 'package:portfolio_web/Projects.dart';
 import 'package:portfolio_web/About_Me.dart';
+import 'package:portfolio_web/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
                           ),
                         ),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
@@ -71,35 +75,9 @@ class MyApp extends StatelessWidget {
                             SizedBox(height: 5.00),
                             //Email
                             Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Card(
-                                      color: Color(0XFF323232),
-                                      child: Padding(
-                                        padding: EdgeInsets.all(8.0),
-                                        child: Icon(
-                                          Icons.email_outlined,
-                                          color: Color(0xFFfdc965),
-                                        ),
-                                      ),
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(8.0),
-                                        ),
-                                    ),
-                                    SizedBox(width: 5.00,),
-                                    Text(
-                                      'schakraborty8455@gmail.com',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15.00,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                SizedBox(height: 5.00),
                                 //Phone Number
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -120,6 +98,34 @@ class MyApp extends StatelessWidget {
                                     SizedBox(width: 5.00,),
                                     Text(
                                       '+91 8617257358',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 15.00,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: 5.00),
+                                //Email
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Card(
+                                      color: Color(0XFF323232),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Icon(
+                                          Icons.email_outlined,
+                                          color: Color(0xFFfdc965),
+                                        ),
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                    SizedBox(width: 5.00,),
+                                    Text(
+                                      'schakraborty8455@gmail.com',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15.00,
@@ -155,10 +161,40 @@ class MyApp extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 5.00),
+                                SizedBox(height: 10.00),
 
                               ],
                             ),
+                            Divider(
+                              color: Colors.white,
+                              indent: 70.00,
+                              endIndent: 70.00,
+                            ),
+                            SizedBox(height: 20.00),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Image(
+                                  image: AssetImage('images/github-outline.png'),
+                                  color: Color(0xFFfdc965),
+                                  height: 30.00,
+                                  width: 30.00,
+                                ),
+                                Image(
+                                  image: AssetImage('images/linkedin-outline.png'),
+                                  color: Color(0xFFfdc965),
+                                  height: 30.00,
+                                  width: 30.00,
+                                ),
+                                Image(
+                                  image: AssetImage('images/leetcode-outline.png'),
+                                  color: Color(0xFFfdc965),
+                                  height: 30.00,
+                                  width: 30.00,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 20.00),
                           ],
                         ),
                       ),
@@ -174,11 +210,15 @@ class MyApp extends StatelessWidget {
                         children: <Widget>[
                           Homepage(),
                           SizedBox(height: 10.00),
-                          About_Me(),
+                          Home(),
                         ],
                       ),
                       decoration: BoxDecoration(
                         color: Color(0xFF1e1e1f),
+                        image: DecorationImage(
+                          image: AssetImage('images/home-bg.jpg'),
+                          fit: BoxFit.cover,
+                        ),
                         borderRadius: BorderRadius.all(
                           Radius.circular(40.0),
                         ),
@@ -194,6 +234,13 @@ class MyApp extends StatelessWidget {
   }
 }
 
+Color is_color_home=Color(0xFFfdc965);
+Color is_color_about=Colors.white;
+Color is_color_projects=Colors.white;
+Color is_color_experience=Colors.white;
+Color is_color_resume=Colors.white;
+Color is_color_contact=Colors.white;
+
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
 
@@ -202,138 +249,152 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  Color is_color_about=Colors.white;
-  Color is_color_projects=Colors.white;
-  Color is_color_experience=Colors.white;
-  Color is_color_resume=Colors.white;
-  Color is_color_contact=Colors.white;
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20.00),
-      decoration: BoxDecoration(
-        color: Color(0XFF323232),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40.0),
-          topRight: Radius.circular(40.0),
+        padding: EdgeInsets.all(20.00),
+        decoration: BoxDecoration(
+          color: Color(0XFF323232),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40.0),
+            topRight: Radius.circular(40.0),
+          ),
         ),
-      ),
 
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          //About Me
-          GestureDetector(
-            onTap: (){
-              setState(() {
-                is_color_about=Color(0xFFfdc965);
-                is_color_projects=Colors.white;
-                is_color_experience=Colors.white;
-                is_color_resume=Colors.white;
-                is_color_contact=Colors.white;
-              });
-              About_Me();
-            },
-            child: Text(
-              'About Me',
-              style: TextStyle(
-                color: is_color_about,
-                fontSize: 20.00,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          //Projects
-          GestureDetector(
-            onTap: (){
-              setState(() {
-                is_color_about=Colors.white;
-                is_color_projects=Color(0xFFfdc965);
-                is_color_experience=Colors.white;
-                is_color_resume=Colors.white;
-                is_color_contact=Colors.white;
-                ;
-              });
-              About_Me();
-            },
-            child: Text(
-              'Projects',
-              style: TextStyle(
-                color: is_color_projects,
-                fontSize: 20.00,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          //Experience
-          GestureDetector(
-            onTap: (){
-              setState(() {
-                is_color_about=Colors.white;
-                is_color_projects=Colors.white;
-                is_color_experience=Color(0xFFfdc965);
-                is_color_resume=Colors.white;
-                is_color_contact=Colors.white;
-              });
-              About_Me();
-            },
-            child: Text(
-              'Experience',
-              style: TextStyle(
-                color: is_color_experience,
-                fontSize: 20.00,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          //Resume
-          GestureDetector(
-            onTap: (){
-              setState(() {
-                is_color_about=Colors.white;
-                is_color_projects=Colors.white;
-                is_color_experience=Colors.white;
-                is_color_resume=Color(0xFFfdc965);
-                is_color_contact=Colors.white;
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            //Home
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  is_color_home=Color(0xFFfdc965);
+                  is_color_about=Colors.white;
+                  is_color_projects=Colors.white;
+                  is_color_experience=Colors.white;
+                  is_color_resume=Colors.white;
 
-              });
-              About_Me();
-            },
-            child: Text(
-              'Resume',
-              style: TextStyle(
-                color: is_color_resume,
-                fontSize: 20.00,
-                fontWeight: FontWeight.w500,
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MyApp()),
+                  );
+                });
+              },
+              child: Text(
+                'Home',
+                style: TextStyle(
+                  color: is_color_home,
+                  fontSize: 20.00,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
-          //Contact Me
-          GestureDetector(
-            onTap: (){
-              setState(() {
-                is_color_about=Colors.white;
-                is_color_projects=Colors.white;
-                is_color_experience=Colors.white;
-                is_color_resume=Colors.white;
-                is_color_contact=Color(0xFFfdc965);
+            //About Me
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  is_color_home=Colors.white;
+                  is_color_about=Color(0xFFfdc965);
+                  is_color_projects=Colors.white;
+                  is_color_experience=Colors.white;
+                  is_color_resume=Colors.white;
+                  is_color_contact=Colors.white;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const About()),
+                  );
 
-              });
-              About_Me();
-            },
-            child: Text(
-              'Contact Me',
-              style: TextStyle(
-                color: is_color_contact,
-                fontSize: 20.00,
-                fontWeight: FontWeight.w500,
+                });
+
+              },
+              child: Text(
+                'About',
+                style: TextStyle(
+                  color: is_color_about,
+                  fontSize: 20.00,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
-        ],
-      ),
+            //Projects
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  is_color_home=Colors.white;
+                  is_color_about=Colors.white;
+                  is_color_projects=Color(0xFFfdc965);
+                  is_color_experience=Colors.white;
+                  is_color_resume=Colors.white;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyProjects()),
+                  );
+
+                });
+              },
+              child: Text(
+                'Projects',
+                style: TextStyle(
+                  color: is_color_projects,
+                  fontSize: 20.00,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            //Experience
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  is_color_home=Colors.white;
+                  is_color_about=Colors.white;
+                  is_color_projects=Colors.white;
+                  is_color_experience=Color(0xFFfdc965);
+                  is_color_resume=Colors.white;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyExperience()),
+                  );
+                });
+                About_Me();
+              },
+              child: Text(
+                'Experience',
+                style: TextStyle(
+                  color: is_color_experience,
+                  fontSize: 20.00,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            //Resume
+            GestureDetector(
+              onTap: (){
+                setState(() {
+                  is_color_home=Colors.white;
+                  is_color_about=Colors.white;
+                  is_color_projects=Colors.white;
+                  is_color_experience=Colors.white;
+                  is_color_resume=Color(0xFFfdc965);
+                  //TODO: ADD RESUME
+                });
+              },
+              child: Text(
+                'Resume',
+                style: TextStyle(
+                  color: is_color_resume,
+                  fontSize: 20.00,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+
+          ],
+        ),
+
     );
 
   }
 }
+
